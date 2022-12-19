@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liz Furtado - Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Draco is free PSD &amp; HTML template by @afnizarnur">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/kube.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/custom.min.css" />
+    <link rel="shortcut icon" href="img/favicon.png" />
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	
+</head>
+<body>
+	<!-- Navigation -->
+	<div class="main-nav">
+		<div class="container">
+			<header class="group top-nav">
+				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
+				    <span class="logo">FURTADO</span>
+				</div>
+			    <nav id="navbar-1" class="navbar item-nav">
+				    <ul>
+				        <li class="active"><a href="#about">About</a></li>
+				        <li><a href="#education">Education</a></li>
+						<li><a href="#experiences">Experiences</a></li>
+						<li><a href="#skills">Skills</a></li>
+				        <li><a href="#achievements">Achievements</a></li>
+						<ul id="nav2">
+							<li><a href="#">Projects</a>	
+								<ul style="display:none">
+									<li>
+										<a href="social_media.html">Social Media</a>
+										<!--<a href="#">Videography</a>-->
+										<a href="blog.html">Blog</a>
+										<a href="OtherProjects.html">Other Projects</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</ul>
+				</nav>
+			</header>
+		</div>
+	</div>
+
+	<!-- Introduction -->
+	<h1> <center>This page is currently<br><i>under construction</i></center></h1>
+	<center><img src="img/MeandBobVila.png" width=50% height=50% title="Me and Bob Vila working hard to restore This Old Blog" alt="Page underconstruction :("> </center>
+
+	<!-- Quote -->
+	<div class="quote">
+		<div class="container text-centered">
+			<h1>"Behind every successful man, there is a woman – And behind every unsuccessful man, there are two." - Mark Twain</h1>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="units-row">
+			    <div class="unit-50">
+			    	<p>Drop me a line at Liz@LizFurtado.com</p>
+			    </div>
+			    <div class="unit-50">
+					<ul class="social list-flat right">
+						<li><a href="mailto:liz@Lizfurtado.com"><i class="fa fa-send"></i></a></li>
+						<li><a href="http://tiktok.com/user/kinglizardwizard"><i class="fa fa-tiktok"></i></a></li>
+						<li><a href="http://twitter.com/lizfurtado_"><i class="fa fa-twitter"></i></a></li>
+						
+					</ul>
+			    </div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Javascript -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/typed.min.js"></script>
+    <script src="js/kube.min.js"></script>
+    <script src="js/site.js"></script>
+    <script>
+		function newTyped(){}$(function(){$("#typed").typed({
+		// Change to edit type effect
+		strings: ["write", "edit", "film", "create"],
+
+		typeSpeed:90,backDelay:700,contentType:"html",loop:!0,resetCallback:function(){newTyped()}}),$(".reset").click(function(){$("#typed").typed("reset")})});
+    </script>
+	
+	<script>
+		$(document).ready (function () {
+			$('#nav2').hover (
+			function () {
+				//show submenu
+				$('ul', this).slideDown("fast");
+			}, function () {
+				//hide submenu
+				$('ul', this).slideUp("fast");
+			});
+		});
+	</script>
+</body>
+</html>
