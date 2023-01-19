@@ -1,0 +1,149 @@
+<!DOCTYPE HTML> 
+<html> 
+  
+<head> 
+    <title> 
+        Beale Cipher Assistant
+    </title>
+</head> 
+  
+<body style = "text-align:center;" id = "body"> 
+      
+    <h1 style = "color:darkslategray" > 
+        Beale Cipher Assistant
+    </h1>
+    <p>
+        Welcome to the Beale Cipher Assistant. This tool helps you decipher a secret message provided the source text and key. Use one of the provided templates below or feel free to crack your own secret message!
+    </p>
+    <div>
+        
+            <button onclick = "Template1()">
+                Animal Farm
+            </button>
+        
+            <button onclick = "Template2()">
+                Frankenstein
+            </button>
+        
+            <button onclick = "Template3()">
+                Romeo and Juliet
+            </button>
+        
+    </div>
+    <p style = 
+        "font-size: 19px; font-weight: bold;">
+        Click the button below to Decipher the following text:
+    </p>
+    <p id = "GFG_test" style = 
+        "font-size: 12px; font-weight: bold;">
+    </p>
+  
+ <p style = 
+        "font-size: 19px; font-weight: bold;">
+        According to the following key:
+    </p> 
+    
+   
+ <p id = "GFG_key" style = 
+        "font-size: 12px; font-weight: bold;">
+    </p> 
+   
+    <br>
+      
+    
+    </p>
+           <input type="text" id="text1" placeholder="Text">
+           <input type="text" id="key1" placeholder="Key in CSV">
+            <button onclick = "submitMe()">
+                Submit
+            </button>
+    
+    <div>
+        <br>
+        <button onclick = "GFG_Fun()">
+            Decipher
+        </button>
+    </div>
+
+    <div>      
+        <p id = "GFG_DOWN" style =
+         "color: green; font-size: 24px; font-weight: bold;">
+    </div>  
+
+    <script>
+        const arr = [];
+        const text1 = document.getElementById('text1');
+        let el_test = document.getElementById("GFG_test"); 
+        
+        const key1 = document.getElementById('key1');
+        let el_key = document.getElementById("GFG_key");
+
+        let el_down = document.getElementById("GFG_DOWN");
+        
+        function submitMe() {
+            el_test.innerHTML = text1.value;
+            el_key.innerHTML = key1.value;
+            el_down.innerHTML = "";
+        }
+
+        function getIndex(str, substr, ind) {
+            let Len = str.length, i = -1;
+            while(ind-- && i++ < Len) {
+               i = str.indexOf(substr, i);
+                if (i < 0) break;
+            }
+            return i+1;
+        }
+
+        function GFG_Fun() {
+        let a = -1;
+        let i = 0;
+        let text = text1.value;
+        let strt = '*';
+        let fullString = strt + text;
+        let searchString = '*';
+        let string = fullString.replaceAll(' ','*');
+        let keyinput = key1.value;
+        const keys = keyinput.split(',');
+        
+       //   const keys = [1,2,3,4,5]
+        for (; i < keys.length; i++ ) {
+            a = a + 1;
+                //arr.push(string.charAt(getIndex(string, searchString, keys[a]))); 
+            arr.splice(arr.length, 0, string.charAt(getIndex(string, searchString, keys[a])));
+                // arr[arr.length] = string.charAt(getIndex(string, searchString, keys[a]));
+           }
+        el_down.innerHTML = arr.join("").toLowerCase();
+        delete(text);
+        delete(strt);
+        delete(fullString);
+        delete(searchString);
+        delete(string);
+        delete(keyinput);
+        delete(keys);
+        delete(key1);
+        delete(text1);
+        arr.length = 0;
+        }
+
+        function Template1() {
+            delete(el_down.innerHTML);
+            key1.value = "3,141,11,2,54,126,148,54,124,130,130,100,101,169,137,136,136,137,39,137,6,130,100,101,34,101,38,38,121,196,199,203,126,130,190,163,101,91"
+            text1.value = "Nevertheless, they were both thoroughly frightened by the rebellion on Animal Farm, and very anxious to prevent their own animals from learning too much about it. At first they pretended to laugh to scorn the idea of animals managing a farm for themselves. The whole thing would be over in a fortnight, they said. They put it about that the animals on the Manor Farm (they insisted on calling it the Manor Farm; they would not tolerate the name 'Animal Farm') were perpetually fighting among themselves and were also rapidly starving to death. When time passed and the animals had evidently not starved to death, Frederick and Pilkington changed their tune and began to talk of the terrible wickedness that now flourished on Animal Farm. It was given out that the animals there practised cannibalism, tortured one another with red-hot horseshoes, and had their females in common. This was what came of rebelling against the laws of Nature, Frederick and Pilkington said. However, these stories were never fully believed. Rumours of a wonderful farm, where the human beings had been turned out and the animals managed their own affairs, continued to circulate in vague and distorted forms, and throughout that year a wave of rebelliousness ran through the countryside."
+        }
+
+        function Template2() {
+            delete(el_down.innerHTML);
+            key1.value = "13,68,104,58,151,53,175,186,179,58,104,187,161"
+            text1.value = "It was on a dreary night of November that I beheld the accomplishment of my toils. With an anxiety that almost amounted to agony, I collected the instruments of life around me, that I might infuse a spark of being into the lifeless thing that lay at my feet. It was already one in the morning; the rain pattered dismally against the panes, and my candle was nearly burnt out, when, by the glimmer of the half-extinguished light, I saw the dull yellow eye of the creature open; it breathed hard, and a convulsive motion agitated its limbs. How can I describe my emotions at this catastrophe, or how delineate the wretch whom with such infinite pains and care I had endeavoured to form? His limbs were in proportion, and I had selected his features as beautiful. Beautiful! Great God! His yellow skin scarcely covered the work of muscles and veins beneath; his hair was of a lustrous black, and knotted; his teeth of a pearly whiteness; but these luxuriances only formed a more ugly contrast with his watery eyes, that seemed almost of the same colour as the dun-white sockets in which they were set, his shrivelled complexion and straight black lips."
+        }
+
+        function Template3() {
+            delete(el_down.innerHTML);
+            key1.value = "76,21,4,5,12,21,76,4,1,12,5,102,4,1,12,5,102,8,28,71,1,4,6,13,6,13,1,23,13,21"
+            text1.value = "Two households, both alike in dignity, In fair Verona, where we lay our scene, From ancient grudge break to new mutiny, Where civil blood makes civil hands unclean. From forth the fatal loins of these two foes A pair of star-cross’d lovers take their life; Whose misadventured piteous overthrows Do with their death bury their parents’ strife. The fearful passage of their death-mark’d love, And the continuance of their parents’ rage, Which, but their children’s end, nought could remove, Is now the two hours’ traffic of our stage; The which if you with patient ears attend, What here shall miss, our zoil shall strive to mend."
+        }
+    </script> 
+</body>
+  
+</html>
